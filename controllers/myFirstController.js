@@ -5,4 +5,4 @@ module.exports.helloworld = (req, res) => {
   responseObj.contadorAlumnos = nombreAlumnos.length;
   const responseStatus = 200;
   res.status(responseStatus).send(responseObj);
-  }
+  };
