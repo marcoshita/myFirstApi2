@@ -3,8 +3,8 @@ const app = express();
 require('dotenv').config();
 const myFirstController = require('./controllers/myFirstController');
 const cors = require('cors');
-const connect = require('./database/connect');
-connect.createConnection();
+// const connect = require('./database/connect');
+// connect.createConnection();
 
 app.use(cors());
 app.use(express.json());
