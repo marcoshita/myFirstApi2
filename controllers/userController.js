@@ -1,10 +1,3 @@
-// module.exports.list = () => {
-
-// };
-
-// module.exports.profile = () => {
-
-// };
 const users = [
   {id: 1, name: 'john'}, 
   {id: 2, name:'david'},
@@ -14,6 +7,7 @@ const users = [
 const status = {
   ok: 200,
   notFound: 404,
+  created: 201,
 };
 
 module.exports = {
@@ -31,5 +25,12 @@ module.exports = {
       res.status(status.notFound).send(msg);
     }
     
+  },
+
+  create: (req, res) => {
+    const user = req.body;
+    user.id = users.length + 1;
+    users.push(user);
+    res.status(status.created).send(user);
   },
   }
